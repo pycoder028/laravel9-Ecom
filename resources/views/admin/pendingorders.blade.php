@@ -2,6 +2,6 @@
 
 @section('content')
 
-<h2>Dashboard</h2>
+<h2>pending order</h2>
 
 @endsection

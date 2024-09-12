@@ -2,6 +2,6 @@
 
 @section('content')
 
-<h2>Dashboard</h2>
+<h2>add product</h2>
 
 @endsection
