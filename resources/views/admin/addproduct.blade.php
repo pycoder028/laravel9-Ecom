@@ -49,7 +49,7 @@ Add Product | Single Ecom
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Product Quantity</label>
                             <div class="col-sm-10">
                                 <input type="number" class="form-control" id="product_quantity" name="product_quantity"
-                                    placeholder="0.00" />
+                                    placeholder="0" />
                             </div>
                         </div>
                         <div class="row mb-3">
