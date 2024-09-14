@@ -54,12 +54,14 @@ class CategoryController extends Controller
             'slug' => strtolower(str_replace(' ','-', $request->category_name)),
         ]);
 
+        toastr()->timeOut(5000)->closeButton()->addSuccess('Category Updated Successfully!');
         return redirect()->route('allcategory')->with('message','Category Updated Successfully!');
     }
 
     public function DeleteCategory($id){
         Category::findOrFail($id)->delete();
 
+        toastr()->timeOut(5000)->closeButton()->addSuccess('Category Deleted Successfully!');
         return redirect()->route('allcategory')->with('message','Category Deleted Successfully!');
     }
 
