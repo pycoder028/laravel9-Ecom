@@ -45,6 +45,9 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ asset('dashboard/assets/js/config.js') }}"></script>
+    
+    {{-- sweet alert sript cdn --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -285,6 +288,30 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    {{-- sweet alert script --}}
+    <script type="text/javascript">
+        function confirmation(ev){
+            ev.preventDefault();
+            var urlToRedirect = ev.currentTarget.getAttribute('href');
+
+            console.log(urlToRedirect);
+
+            swal({
+                title: "Are you sure to delete this ? ",
+                text: "You won't to be able to revert this delete ",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willCancel)=>{
+                if(willCancel){
+                    window.location.href = urlToRedirect;
+                }
+            });
+        }
+    </script>
+
 </body>
 
 </html>
