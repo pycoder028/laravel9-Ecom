@@ -19,7 +19,7 @@
                 <table class="table">
                     <thead class="table-light">
                         <tr>
-                            <th>ID</th>
+                            <th>SL</th>
                             <th>Category Name</th>
                             <th>Subcategory</th>
                             <th>Product</th>
@@ -27,16 +27,18 @@
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
+                        @foreach ($categories as $category)
                         <tr>
-                            <td>1</td>
-                            <td>Electronics</td>
-                            <td>13</td>
-                            <td>55</td>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $category->category_name }}</td>
+                            <td>{{ $category->subcategory_count }}</td>
+                            <td>{{ $category->slug }}</td>
                             <td>
-                                <a href="" class="btn btn-sm btn-info">Edit</a>
-                                <a href="" class="btn btn-sm btn-warning">Delete</a>
+                                <a href="{{ route('editcategory', $category->id) }}" class="btn btn-sm btn-info">Edit</a>
+                                <a href="{{ route('deletecategory', $category->id) }}" class="btn btn-sm btn-warning">Delete</a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
