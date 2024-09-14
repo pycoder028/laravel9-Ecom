@@ -31,6 +31,8 @@ class CategoryController extends Controller
             'slug' => strtolower(str_replace(' ','-', $request->category_name)),
         ]);
 
+        toastr()->timeOut(5000)->closeButton()->addSuccess('Category Added Successfully!');
+
         return redirect()->route('allcategory')->with('message','Category Added Successfully!');
 
     }
