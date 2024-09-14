@@ -22,7 +22,7 @@
                             <th>SL</th>
                             <th>Category Name</th>
                             <th>Subcategory</th>
-                            <th>Product</th>
+                            <th>Slug</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
