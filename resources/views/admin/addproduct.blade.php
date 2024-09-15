@@ -15,7 +15,7 @@ Add Product | Single Ecom
                     <small class="text-muted float-end">Input Information</small>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('storeproduct') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('updateimageproduct') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Select Category</label>

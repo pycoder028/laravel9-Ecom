@@ -19,7 +19,7 @@ All Products | Single Ecom
                 <table class="table">
                     <thead class="table-light">
                         <tr>
-                            <th>ID</th>
+                            <th>SL</th>
                             <th>Product Name</th>
                             <th>Image</th>
                             <th>Price</th>
@@ -27,16 +27,22 @@ All Products | Single Ecom
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
+                        @foreach ($products as $product)
                         <tr>
-                            <td>10</td>
-                            <td>Watch</td>
-                            <td></td>
-                            <td>55</td>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $product->product_name }}</td>
                             <td>
-                                <a href="" class="btn btn-sm btn-info">Edit</a>
-                                <a href="" class="btn btn-sm btn-warning">Delete</a>
+                                <img style="width: 100px" src="{{ asset($product->product_img) }}" alt="">
+                                <br>
+                                <a href="{{ route('editproductimg', $product->id) }}" class="btn btn-sm btn-primary">Update Image</a>
+                            </td>
+                            <td>{{ $product->price }}</td>
+                            <td>
+                                <a href="{{ route('editproduct', $product->id) }}" class="btn btn-sm btn-info">Edit</a>
+                                <a href="{{ route('deleteproduct', $product->id) }}" class="btn btn-sm btn-warning">Delete</a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
